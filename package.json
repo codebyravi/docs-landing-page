@@ -17,7 +17,7 @@
         "build:webpack": "webpack --mode=production"
     },
     "devDependencies": {
-        "@babel/core": "^7.14.3",
+        "@babel/core": "^7.14.5",
         "@babel/preset-env": "^7.14.5",
         "@babel/preset-react": "^7.14.5",
         "atomic-algolia": "^0.3.19",
