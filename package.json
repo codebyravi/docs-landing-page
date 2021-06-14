@@ -9,12 +9,12 @@
         "start": "run-p start:*",
         "start:hugo": "make serve",
         "start:webpack": "webpack --mode=development --watch",
-        "build": "make install && rm -rf static/assets && run-s build:webpack build:hugo && algolia && index",
+        "build:index": "node scraper.js",
+        "build:algolia": "atomic-algolia",
+        "build": "make install && rm -rf static/assets && run-s build:webpack build:hugo build:index build:algolia",
         "build:local": "rm -rf static/assets && run-s build:webpack build:hugo",
         "build:hugo": "make build",
-        "build:webpack": "webpack --mode=production",
-        "algolia": "atomic-algolia",
-        "index": "node scraper.js"
+        "build:webpack": "webpack --mode=production"
     },
     "devDependencies": {
         "@babel/core": "^7.14.3",
@@ -39,7 +39,7 @@
         "react-bootstrap": "^1.6.1",
         "react-dom": "^17.0.2",
         "react-icons": "^4.2.0",
-        "react-instantsearch": "^6.10.3",
+        "react-instantsearch": "^6.11.1",
         "react-instantsearch-dom": "^6.10.3",
         "url-parse": "^1.5.1",
         "webpack": "^5.38.1",
